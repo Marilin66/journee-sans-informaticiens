@@ -1,0 +1,13 @@
+Rôle : Tu es un développeur front-end senior et un designer créatif.
+Mission : Crée un site one-page « Une journée sans informaticiens » pour Germaine DOSSOU AHOVI, qui m'a demandé ce que font les informaticiens. Ton taquin, drôle, jamais agressif, avec une conclusion sérieuse.
+Stack imposée : React 18 + Vite, Framer Motion, Tailwind CSS. Pas d'autre dépendance. Composants séparés, code commenté, textes centralisés dans un fichier content.js. Mobile d'abord, responsive, mode sombre, accents néon vert/cyan et rouge pour les pannes. Texte en français.
+Composants et animations :
+Hero : horloge 6h00, message « Bonjour Germaine. Tout fonctionne. Profite, ça ne va pas durer. », bouton rouge pulsant Retirer les informaticiens.
+Blackout : au clic, glitch plein écran, puis cascade de notifications qui plantent (réseau télécom coupé, WhatsApp et Mobile Money HS, banques et guichets en panne, hôpitaux sans dossiers, électricité coupée). Barre de signal qui tombe à zéro, écran bleu.
+Journey : mini-scénario interactif où Germaine tente de commander, payer, écrire, regarder une vidéo. Chaque action échoue avec une erreur drôle (« Erreur 404 : l'informaticien est introuvable »). Compteur « Choses qui marchent encore : 0 ».
+Reboot : bouton vert Rappeler un informaticien, tout se rallume progressivement.
+Skills : cartes animées au scroll : développement web et mobile, réseaux et télécoms, maintenance et dépannage, cybersécurité, hébergement et bases de données.
+Finale : effet machine à écrire « Tu me demandais ce que nous faisons. Maintenant tu sais. 😉 » et bouton Me répondre (lien WhatsApp configurable).
+Footer : « Marilin BADJI, technicien supérieur en informatique et télécommunications ».
+Qualité : 60 fps, animations sur transform et opacity uniquement, chargement paresseux, aucune erreur console, accessible (prefers-reduced-motion respecté).
+Livrable : arborescence du projet, tous les fichiers complets, commandes npm pour lancer, et étapes de déploiement sur Vercel.

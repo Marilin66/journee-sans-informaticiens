@@ -1,0 +1,60 @@
+/* Tailwind et styles de base (mode sombre « night » fixé globalement). */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #070a10;
+}
+
+body {
+  background-color: #070a10;
+  color: #cbd5e1;
+  font-feature-settings: 'liga' 1, 'kern' 1;
+}
+
+/* ── Animations keyframes ultra légères (transform + opacity) ── */
+
+@keyframes glitch-shift {
+  0%   { transform: translate3d(-8px, 0, 0); opacity: 0.9; }
+  20%  { transform: translate3d(10px, 0, 0); opacity: 0.4; }
+  40%  { transform: translate3d(-12px, 0, 0); opacity: 1; }
+  60%  { transform: translate3d(6px, 0, 0); opacity: 0.3; }
+  80%  { transform: translate3d(-4px, 0, 0); opacity: 0.8; }
+  100% { transform: translate3d(0, 0, 0); opacity: 0; }
+}
+
+.animate-glitch-shift {
+  animation: glitch-shift 1.2s steps(2, end) forwards;
+}
+
+@keyframes caret {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-caret {
+  animation: caret 1s steps(1, end) infinite;
+}
+
+.animate-caret-done {
+  animation: caret 1s steps(1, end) 4;
+  animation-fill-mode: forwards;
+}
+
+/* ── Accessibilité : tout stoppe pour prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
