@@ -4,6 +4,7 @@ import Hero from './components/Hero.jsx'
 import Blackout from './components/Blackout.jsx'
 import Journey from './components/Journey.jsx'
 import Reboot from './components/Reboot.jsx'
+import Restored from './components/Restored.jsx'
 import Footer from './components/Footer.jsx'
 
 /* Chargement paresseux : sections non critiques au premier écran. */
@@ -15,7 +16,8 @@ const delayMs = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 /**
  * App — machine à états narrative du site :
- *   home → blackout (glitch, pannes, écran bleu) → journey → reboot → home.
+ *   home → blackout (glitch, pannes, écran bleu) → journey → reboot →
+ *   restored (page de rétablissement) → home.
  */
 export default function App() {
   const [phase, setPhase] = useState('home')
@@ -37,7 +39,13 @@ export default function App() {
     window.scrollTo({ top: 0 })
   }
 
-  /* Reboot terminé : retour à l'état initial (page « réparée »). */
+  /* Reboot terminé : page de rétablissement (pas encore l'accueil). */
+  const finishReboot = () => {
+    setPhase('restored')
+    window.scrollTo({ top: 0 })
+  }
+
+  /* La page de rétablissement mène ensuite à l'accueil complet du site. */
   const backHome = () => {
     setPhase('home')
     window.scrollTo({ top: 0 })
@@ -65,9 +73,11 @@ export default function App() {
           transition={{ duration: 0.5 }}
         >
           <Journey />
-          <Reboot onDone={backHome} />
+          <Reboot onDone={finishReboot} />
         </motion.main>
       )}
+
+      {phase === 'restored' && <Restored onEnter={backHome} />}
 
       {phase === 'home' && (
         <motion.main

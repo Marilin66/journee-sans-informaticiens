@@ -162,6 +162,14 @@ export function RefreshIcon(props) {
   )
 }
 
+export function CheckIcon(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="m5 12.5 4.5 4.5L19 7.5" />
+    </svg>
+  )
+}
+
 export function WhatsAppIcon(props) {
   return (
     <svg {...base} {...props}>

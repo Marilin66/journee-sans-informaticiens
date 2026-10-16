@@ -83,6 +83,32 @@ const content = {
     ],
   },
 
+  // Page de rétablissement affichée APRÈS le reboot (avant l'accueil).
+  restored: {
+    kicker: '06:04 — RÉTABLISSEMENT COMPLET',
+    title: 'Tout est de retour.',
+    titleAccent: 'Et pas par magie.',
+    lead:
+      'Réseau, paiements, hôpitaux, énergie : six services sur six repartis après un seul appel à un informaticien.',
+    services: [
+      'Réseaux télécoms',
+      'WhatsApp & réseaux sociaux',
+      'Mobile Money',
+      'Banques & guichets',
+      'Hôpitaux',
+      'Électricité',
+    ],
+    stats: [
+      { value: '6/6', label: 'services rétablis' },
+      { value: '1', label: 'appel suffit' },
+      { value: '0', label: 'réponse du service client' },
+    ],
+    serious:
+      'Ce n’était pas de la magie : c’est un métier. Des heures de formation, des nuits d’astreinte, et le réflexe de savoir quoi faire quand plus rien ne répond.',
+    cta: 'Découvrir ce qu’il fait vraiment',
+    hint: 'La suite du site : nos métiers, en clair.',
+  },
+
   // Compétences métier (cartes au scroll).
   skills: {
     heading: 'Ce que nous faisons vraiment, tous les jours',
